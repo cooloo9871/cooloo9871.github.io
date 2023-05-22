@@ -12,7 +12,7 @@ RUN zypper in -y wget && \
     mkdir -p /opt/www
 
 # 複製public_html資料夾到/opt/www
-COPY public_html /opt/www
+COPY index.html /opt/www
 
 # 設置ENTRYPOINT和CMD
 CMD ["busybox", "httpd", "-p", "80", "-h", "/opt/www", "-f"]
