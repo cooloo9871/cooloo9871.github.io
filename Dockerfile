@@ -13,6 +13,7 @@ RUN zypper in -y wget && \
 
 # 複製index.html，assets資料夾到/opt/www
 COPY index.html /opt/www
-COPY assets /opt/www
+COPY assets /opt/www/assets
+
 # 設置ENTRYPOINT和CMD
 CMD ["busybox", "httpd", "-p", "80", "-h", "/opt/www", "-f"]
